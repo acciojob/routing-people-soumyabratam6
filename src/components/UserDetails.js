@@ -15,17 +15,16 @@ const UserDetails = () => {
         return response.json();
       })
       .then((data) => {
-        setTimeout(() => {
-            setUser(data);
-            setLoading(false);
-        }, 5000); // 5000ms delay
+        setUser(data);
+        setLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching user details:', error);
         setLoading(false);
       });
   }, [id]);
-  if (loading) return <div>Loading...</div>
+  
+  if (loading) return <div>Loading...</div>;
   if (!user) return <p>User not found</p>;
 
   return (
