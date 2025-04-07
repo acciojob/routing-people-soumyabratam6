@@ -17,7 +17,7 @@ const UserList = () => {
       });
 
     },[])
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <div>Loading...</div>;
   return (
     <div>
       <h1>User List</h1>

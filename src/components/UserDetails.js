@@ -24,7 +24,7 @@ const UserDetails = () => {
       });
   }, [id]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <div>Loading...</div>;
   if (!user) return <p>User not found</p>;
 
   return (
