@@ -5,18 +5,20 @@ const UserList = () => {
     const[user,setUser] = useState([]);
     const[loading,setLoading] = useState(true);
     useEffect(()=>{
-        fetch('https://jsonplaceholder.typicode.com/users')
-        .then((res) => res.json())
+      fetch('https://jsonplaceholder.typicode.com/users')
+      .then((res) => res.json())
       .then((data) => {
-        setUser(data);
-        setLoading(false);
+          setTimeout(() => {
+              setUser(data);
+              setLoading(false);
+          }, 5000); // 5000ms delay
       })
       .catch((error) => {
-        console.error('Error fetching users:', error);
-        setLoading(false);
+          console.error('Error fetching users:', error);
+          setLoading(false);
       });
-
-    },[])
+  
+  },[])
     if (loading) return <div>Loading...</div>;
   return (
     <div>
