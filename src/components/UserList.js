@@ -24,7 +24,7 @@ const UserList = () => {
       <ul data-testid="user-list">
         {user.map((user) => (
           <li key={user.id}>
-            <Link to={`/profile/${user.id}`} data-testid={`user-link-${user.id}`}>
+            <Link to={`/users/${user.id}`} data-testid={`user-link-${user.id}`}>
               {user.name}
             </Link>
           </li>
